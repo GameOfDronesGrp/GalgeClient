@@ -1,34 +1,32 @@
 package galgeclient;
 
+import galgelegport.wsdl.GalgeServiceService;
+import galgelegport.wsdl.Galgelogik;
 import java.io.Console;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.ws.WebServiceRef;
-import sh.surge.galgeleg.wsdl.Galgelogik;
-import sh.surge.galgeleg.wsdl.AlleGalgespilService;
 
 public class Client {
     @WebServiceRef
-    static AlleGalgespilService service;
+    static GalgeServiceService service;
     static Galgelogik port;
-    
     String brugernavn;
     String password;
     
     //main run
     public static void main(String[] args) throws MalformedURLException, RemoteException, Exception{
         Scanner scan = new Scanner(System.in);
-        
         try{
-            service = new AlleGalgespilService();
+            service = new GalgeServiceService();
             port = service.getPort(Galgelogik.class);
-            
         }catch(Exception e){
             System.out.println("Forbindelsen mislykkedes");
             e.printStackTrace();
         }
-
         new Client().run(port,scan);
         scan.close();
     }
@@ -88,7 +86,10 @@ public class Client {
                 }
                 
                 switch(choice){
-                    case 1: spil(game, scan);  break;
+                    case 1: {
+                        System.out.println("Point hentet fra server: "+game.getScore(brugernavn, password));
+                        spil(game, scan);
+                    }  break;
                     case 2: {
                         System.out.println("Du er nu logget ud");
                         loggedIn = false;
@@ -104,7 +105,7 @@ public class Client {
         
         String gaet;
         final int liv = 7;
-        
+        game.nulstil(brugernavn, password);
         System.out.println("\n\n- Spillet er startet -");
         
         while(!game.erSpilletSlut(brugernavn,password)){
@@ -134,8 +135,14 @@ public class Client {
                 }
                 if(game.erSpilletTabt(brugernavn, password)){
                     System.out.println("Du har tabt, Ordet var: " + game.getOrdet(brugernavn, password));
+                    try {Thread.sleep(4000);
+                    } catch (InterruptedException ex) {}
+                    System.out.println("Point der bliver gemt: "+game.getScore(brugernavn, password));
                 }else if(game.erSpilletVundet(brugernavn, password)){
                     System.out.println("Du har vundet! Ordet var: "+game.getOrdet(brugernavn, password));
+                    try {Thread.sleep(4000);
+                    } catch (InterruptedException ex) {}
+                    System.out.println("Point der bliver gemt: "+game.getScore(brugernavn, password));
                 }
             }
         }

@@ -16,22 +16,22 @@
             <classpath path="${libs.jaxws21.classpath}"/>
         </taskdef>
     </target>
-    <target name="wsimport-client-AlleGalgespilService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/AlleGalgespilService"/>
-        <property name="wsdl-AlleGalgespilService" location="xml-resources/web-service-references/AlleGalgespilService/wsdl/localhost_8080/GalgeWebservice/AlleGalgespilService.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AlleGalgespilService" destdir="${build.generated.dir}/jax-wsCache/AlleGalgespilService" wsdl="${wsdl-AlleGalgespilService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/GalgeWebservice/AlleGalgespilService?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${wsdl-AlleGalgespilService}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/AlleGalgespilService"/>
+    <target name="wsimport-client-GalgeService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/GalgeService"/>
+        <property name="wsdl-GalgeService" location="xml-resources/web-service-references/GalgeService/wsdl/localhost_9591/Gruppe11/GalgeService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/GalgeService" destdir="${build.generated.dir}/jax-wsCache/GalgeService" wsdl="${wsdl-GalgeService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9591/Gruppe11/GalgeService?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-GalgeService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/GalgeService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/AlleGalgespilService">
+            <fileset dir="${build.generated.dir}/jax-wsCache/GalgeService">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-AlleGalgespilService" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/AlleGalgespilService"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/sh/surge/galgeleg/wsdl"/>
+    <target name="wsimport-client-clean-GalgeService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/GalgeService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/galgelegport/wsdl"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-AlleGalgespilService"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-GalgeService"/>
 </project>
