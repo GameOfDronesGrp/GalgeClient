@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://galgeleg.surge.sh/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://galgeleg.surge.sh/wsdl">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="erSidsteBogstavKorrekt" type="tns:erSidsteBogstavKorrekt"/>
+
+<xs:element name="erSidsteBogstavKorrektResponse" type="tns:erSidsteBogstavKorrektResponse"/>
+
+<xs:element name="erSpilletSlut" type="tns:erSpilletSlut"/>
+
+<xs:element name="erSpilletSlutResponse" type="tns:erSpilletSlutResponse"/>
+
+<xs:element name="erSpilletTabt" type="tns:erSpilletTabt"/>
+
+<xs:element name="erSpilletTabtResponse" type="tns:erSpilletTabtResponse"/>
+
+<xs:element name="erSpilletVundet" type="tns:erSpilletVundet"/>
+
+<xs:element name="erSpilletVundetResponse" type="tns:erSpilletVundetResponse"/>
+
+<xs:element name="getAntalForkerteBogstaver" type="tns:getAntalForkerteBogstaver"/>
+
+<xs:element name="getAntalForkerteBogstaverResponse" type="tns:getAntalForkerteBogstaverResponse"/>
+
+<xs:element name="getBrugteBogstaver" type="tns:getBrugteBogstaver"/>
+
+<xs:element name="getBrugteBogstaverResponse" type="tns:getBrugteBogstaverResponse"/>
+
+<xs:element name="getFornavn" type="tns:getFornavn"/>
+
+<xs:element name="getFornavnResponse" type="tns:getFornavnResponse"/>
+
+<xs:element name="getOrdet" type="tns:getOrdet"/>
+
+<xs:element name="getOrdetResponse" type="tns:getOrdetResponse"/>
+
+<xs:element name="getSynligtOrd" type="tns:getSynligtOrd"/>
+
+<xs:element name="getSynligtOrdResponse" type="tns:getSynligtOrdResponse"/>
+
+<xs:element name="gætBogstav" type="tns:gætBogstav"/>
+
+<xs:element name="gætBogstavResponse" type="tns:gætBogstavResponse"/>
+
+<xs:element name="hentBruger" type="tns:hentBruger"/>
+
+<xs:element name="hentBrugerResponse" type="tns:hentBrugerResponse"/>
+
+<xs:element name="hentOrdFraDr" type="tns:hentOrdFraDr"/>
+
+<xs:element name="hentOrdFraDrResponse" type="tns:hentOrdFraDrResponse"/>
+
+<xs:element name="logStatus" type="tns:logStatus"/>
+
+<xs:element name="logStatusResponse" type="tns:logStatusResponse"/>
+
+<xs:element name="nulstil" type="tns:nulstil"/>
+
+<xs:element name="nulstilResponse" type="tns:nulstilResponse"/>
+
+<xs:element name="opdaterSynligtOrd" type="tns:opdaterSynligtOrd"/>
+
+<xs:element name="opdaterSynligtOrdResponse" type="tns:opdaterSynligtOrdResponse"/>
+
+<xs:element name="printSessionInfo" type="tns:printSessionInfo"/>
+
+<xs:element name="printSessionInfoResponse" type="tns:printSessionInfoResponse"/>
+
+<xs:complexType name="getAntalForkerteBogstaver">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAntalForkerteBogstaverResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFornavn">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getFornavnResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hentBruger">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hentBrugerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getOrdet">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getOrdetResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nulstil">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="nulstilResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="hentOrdFraDr">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="hentOrdFraDrResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="opdaterSynligtOrd">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="opdaterSynligtOrdResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="erSpilletSlut">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="erSpilletSlutResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="erSpilletVundet">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="erSpilletVundetResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="gætBogstav">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="gætBogstavResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getSynligtOrd">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getSynligtOrdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logStatus">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="logStatusResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="printSessionInfo">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="printSessionInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="erSidsteBogstavKorrekt">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="erSidsteBogstavKorrektResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="erSpilletTabt">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="erSpilletTabtResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBrugteBogstaver">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getBrugteBogstaverResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
