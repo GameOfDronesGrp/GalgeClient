@@ -8,7 +8,6 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
-import javax.xml.ws.FaultAction;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -28,6 +27,26 @@ public interface Galgelogik {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getFornavn", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetFornavn")
+    @ResponseWrapper(localName = "getFornavnResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetFornavnResponse")
+    @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/getFornavnRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/getFornavnResponse")
+    public String getFornavn(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
      * @return
      *     returns java.util.List<java.lang.String>
      */
@@ -36,10 +55,16 @@ public interface Galgelogik {
     @RequestWrapper(localName = "getBrugteBogstaver", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetBrugteBogstaver")
     @ResponseWrapper(localName = "getBrugteBogstaverResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetBrugteBogstaverResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/getBrugteBogstaverRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/getBrugteBogstaverResponse")
-    public List<String> getBrugteBogstaver();
+    public List<String> getBrugteBogstaver(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      * @return
      *     returns java.lang.String
      */
@@ -48,10 +73,16 @@ public interface Galgelogik {
     @RequestWrapper(localName = "getSynligtOrd", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetSynligtOrd")
     @ResponseWrapper(localName = "getSynligtOrdResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetSynligtOrdResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/getSynligtOrdRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/getSynligtOrdResponse")
-    public String getSynligtOrd();
+    public String getSynligtOrd(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      * @return
      *     returns java.lang.String
      */
@@ -60,10 +91,16 @@ public interface Galgelogik {
     @RequestWrapper(localName = "getOrdet", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetOrdet")
     @ResponseWrapper(localName = "getOrdetResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetOrdetResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/getOrdetRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/getOrdetResponse")
-    public String getOrdet();
+    public String getOrdet(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      * @return
      *     returns int
      */
@@ -72,10 +109,16 @@ public interface Galgelogik {
     @RequestWrapper(localName = "getAntalForkerteBogstaver", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetAntalForkerteBogstaver")
     @ResponseWrapper(localName = "getAntalForkerteBogstaverResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetAntalForkerteBogstaverResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/getAntalForkerteBogstaverRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/getAntalForkerteBogstaverResponse")
-    public int getAntalForkerteBogstaver();
+    public int getAntalForkerteBogstaver(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      * @return
      *     returns boolean
      */
@@ -84,10 +127,16 @@ public interface Galgelogik {
     @RequestWrapper(localName = "erSidsteBogstavKorrekt", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.ErSidsteBogstavKorrekt")
     @ResponseWrapper(localName = "erSidsteBogstavKorrektResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.ErSidsteBogstavKorrektResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/erSidsteBogstavKorrektRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/erSidsteBogstavKorrektResponse")
-    public boolean erSidsteBogstavKorrekt();
+    public boolean erSidsteBogstavKorrekt(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      * @return
      *     returns boolean
      */
@@ -96,10 +145,16 @@ public interface Galgelogik {
     @RequestWrapper(localName = "erSpilletVundet", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.ErSpilletVundet")
     @ResponseWrapper(localName = "erSpilletVundetResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.ErSpilletVundetResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/erSpilletVundetRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/erSpilletVundetResponse")
-    public boolean erSpilletVundet();
+    public boolean erSpilletVundet(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      * @return
      *     returns boolean
      */
@@ -108,10 +163,16 @@ public interface Galgelogik {
     @RequestWrapper(localName = "erSpilletTabt", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.ErSpilletTabt")
     @ResponseWrapper(localName = "erSpilletTabtResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.ErSpilletTabtResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/erSpilletTabtRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/erSpilletTabtResponse")
-    public boolean erSpilletTabt();
+    public boolean erSpilletTabt(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      * @return
      *     returns boolean
      */
@@ -120,28 +181,46 @@ public interface Galgelogik {
     @RequestWrapper(localName = "erSpilletSlut", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.ErSpilletSlut")
     @ResponseWrapper(localName = "erSpilletSlutResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.ErSpilletSlutResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/erSpilletSlutRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/erSpilletSlutResponse")
-    public boolean erSpilletSlut();
+    public boolean erSpilletSlut(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      */
     @WebMethod
     @RequestWrapper(localName = "nulstil", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.Nulstil")
     @ResponseWrapper(localName = "nulstilResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.NulstilResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/nulstilRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/nulstilResponse")
-    public void nulstil();
+    public void nulstil(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg1
+     * @param arg0
      */
     @WebMethod
     @RequestWrapper(localName = "opdaterSynligtOrd", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.OpdaterSynligtOrd")
     @ResponseWrapper(localName = "opdaterSynligtOrdResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.OpdaterSynligtOrdResponse")
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/opdaterSynligtOrdRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/opdaterSynligtOrdResponse")
-    public void opdaterSynligtOrd();
+    public void opdaterSynligtOrd(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
+     * @param arg2
+     * @param arg1
      * @param arg0
      */
     @WebMethod
@@ -150,7 +229,11 @@ public interface Galgelogik {
     @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/g\u00e6tBogstavRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/g\u00e6tBogstavResponse")
     public void gætBogstav(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2);
 
     /**
      * 
@@ -169,52 +252,5 @@ public interface Galgelogik {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "printSessionInfo", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.PrintSessionInfo")
-    @ResponseWrapper(localName = "printSessionInfoResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.PrintSessionInfoResponse")
-    @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/printSessionInfoRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/printSessionInfoResponse")
-    public String printSessionInfo();
-
-    /**
-     * 
-     */
-    @WebMethod
-    @RequestWrapper(localName = "logStatus", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.LogStatus")
-    @ResponseWrapper(localName = "logStatusResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.LogStatusResponse")
-    @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/logStatusRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/logStatusResponse")
-    public void logStatus();
-
-    /**
-     * 
-     * @throws Exception_Exception
-     */
-    @WebMethod
-    @RequestWrapper(localName = "hentOrdFraDr", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.HentOrdFraDr")
-    @ResponseWrapper(localName = "hentOrdFraDrResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.HentOrdFraDrResponse")
-    @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/hentOrdFraDrRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/hentOrdFraDrResponse", fault = {
-        @FaultAction(className = Exception_Exception.class, value = "http://galgeleg.surge.sh/wsdl/Galgelogik/hentOrdFraDr/Fault/Exception")
-    })
-    public void hentOrdFraDr()
-        throws Exception_Exception
-    ;
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getFornavn", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetFornavn")
-    @ResponseWrapper(localName = "getFornavnResponse", targetNamespace = "http://galgeleg.surge.sh/wsdl", className = "sh.surge.galgeleg.wsdl.GetFornavnResponse")
-    @Action(input = "http://galgeleg.surge.sh/wsdl/Galgelogik/getFornavnRequest", output = "http://galgeleg.surge.sh/wsdl/Galgelogik/getFornavnResponse")
-    public String getFornavn();
 
 }

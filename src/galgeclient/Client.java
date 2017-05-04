@@ -3,33 +3,26 @@ package galgeclient;
 import java.io.Console;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
-import java.util.Map;
 import java.util.Scanner;
-import javax.xml.ws.BindingProvider;
 import javax.xml.ws.WebServiceRef;
 import sh.surge.galgeleg.wsdl.Galgelogik;
-import sh.surge.galgeleg.wsdl.GalgelogikService;
+import sh.surge.galgeleg.wsdl.AlleGalgespilService;
 
 public class Client {
     @WebServiceRef
-    static GalgelogikService service;
+    static AlleGalgespilService service;
     static Galgelogik port;
+    
+    String brugernavn;
+    String password;
     
     //main run
     public static void main(String[] args) throws MalformedURLException, RemoteException, Exception{
         Scanner scan = new Scanner(System.in);
         
         try{
-            service = new GalgelogikService();
+            service = new AlleGalgespilService();
             port = service.getPort(Galgelogik.class);
-            
-            System.out.println("Invoking printSessionInfo operation ...");
-            Map requestContext =
-                ((BindingProvider) port).getRequestContext();
-            requestContext.put(
-                BindingProvider.SESSION_MAINTAIN_PROPERTY, Boolean.TRUE);
-            System.out.println("SESSION_MAINTAIN is set all session ids are same");
-            System.out.println(port.printSessionInfo());
             
         }catch(Exception e){
             System.out.println("Forbindelsen mislykkedes");
@@ -57,24 +50,21 @@ public class Client {
                     choice = 0;
                 }
                 if(choice == 1){
-                        String bruger;
-                        String kode;
-                        
                         try{
                             Console console = System.console();
-                            bruger = console.readLine("Username: ");
+                            brugernavn = console.readLine("Username: ");
                             char[] password = console.readPassword("Password: ");
-                            kode = new String(password);
+                            this.password = new String(password);
                         }catch(Exception e){
                             System.out.println("Skriv brugernavn");
-                            bruger = scan.nextLine();
+                            brugernavn = scan.nextLine();
                             System.out.println("Skriv kode");
-                            kode = scan.nextLine();
+                            password = scan.nextLine();
                         }
                         
-                        if(game.hentBruger(bruger, kode)){
+                        if(game.hentBruger(brugernavn, password)){
                             loggedIn = true;
-                            System.out.printf("Hej %s. Du er nu logget ind!\n\n", game.getFornavn());
+                            System.out.printf("Hej %s. Du er nu logget ind!\n\n", game.getFornavn(brugernavn,password));
                         }else{
                             loggedIn = false;
                             System.out.println("\nBrugerinformation var forkert! Prøv igen\n\n");
@@ -117,11 +107,11 @@ public class Client {
         
         System.out.println("\n\n- Spillet er startet -");
         
-        while(!game.erSpilletSlut()){
+        while(!game.erSpilletSlut(brugernavn,password)){
             scan.reset();
-            System.out.println("Dit ord "+ game.getSynligtOrd());
-            System.out.println("Brugte tegn: "+game.getBrugteBogstaver().toString());
-            System.out.println("Dine liv " + (liv-game.getAntalForkerteBogstaver()));
+            System.out.println("Dit ord "+ game.getSynligtOrd(brugernavn,password));
+            System.out.println("Brugte tegn: "+game.getBrugteBogstaver(brugernavn, password).toString());
+            System.out.println("Dine liv " + (liv-game.getAntalForkerteBogstaver(brugernavn, password)));
             System.out.println("Gæt på et bogstav");
             gaet= scan.nextLine();
             
@@ -130,22 +120,22 @@ public class Client {
                     System.out.println("Ingen cifrer tak :)\n");
                 }
             }catch(NumberFormatException e){
-                if(game.getBrugteBogstaver().contains(gaet)){
+                if(game.getBrugteBogstaver(brugernavn, password).contains(gaet)){
                     System.out.println("Du har allerede gættet på "+gaet+"\n");
                 }else if(gaet.length()>1 || gaet.length() == 0){
-                    System.out.println("Hov... der kom vist lidt for mange tegn der! \nDu må kun indtaste ét tegn.\n");
+                    System.out.println("Du må kun indtaste ét tegn.\n");
                 }else{
-                    game.gætBogstav(gaet);
-                    if (!game.getOrdet().contains(gaet)) {
+                    game.gætBogstav(brugernavn, password,gaet);
+                    if (!game.getOrdet(brugernavn, password).contains(gaet)) {
                         System.out.println("Du gættede forkert!\n");
                     }else{
                         System.out.println("Du gættede rigtigt\n");
                     }
                 }
-                if(game.erSpilletTabt()){
-                    System.out.println("Du har tabt, Ordet var: " + game.getOrdet());
-                }else if(game.erSpilletVundet()){
-                    System.out.println("Du har vundet! Ordet var: "+game.getOrdet());
+                if(game.erSpilletTabt(brugernavn, password)){
+                    System.out.println("Du har tabt, Ordet var: " + game.getOrdet(brugernavn, password));
+                }else if(game.erSpilletVundet(brugernavn, password)){
+                    System.out.println("Du har vundet! Ordet var: "+game.getOrdet(brugernavn, password));
                 }
             }
         }

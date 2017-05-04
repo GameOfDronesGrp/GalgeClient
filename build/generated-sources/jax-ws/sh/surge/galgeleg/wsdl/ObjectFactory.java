@@ -27,7 +27,6 @@ public class ObjectFactory {
     private final static QName _GetSynligtOrdResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "getSynligtOrdResponse");
     private final static QName _ErSpilletVundet_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "erSpilletVundet");
     private final static QName _GetSynligtOrd_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "getSynligtOrd");
-    private final static QName _LogStatus_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "logStatus");
     private final static QName _NulstilResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "nulstilResponse");
     private final static QName _ErSidsteBogstavKorrekt_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "erSidsteBogstavKorrekt");
     private final static QName _GætBogstavResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "g\u00e6tBogstavResponse");
@@ -36,22 +35,16 @@ public class ObjectFactory {
     private final static QName _GetFornavn_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "getFornavn");
     private final static QName _GetOrdetResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "getOrdetResponse");
     private final static QName _GetAntalForkerteBogstaverResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "getAntalForkerteBogstaverResponse");
-    private final static QName _PrintSessionInfoResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "printSessionInfoResponse");
-    private final static QName _HentOrdFraDr_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "hentOrdFraDr");
     private final static QName _GætBogstav_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "g\u00e6tBogstav");
     private final static QName _ErSpilletTabtResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "erSpilletTabtResponse");
-    private final static QName _Exception_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "Exception");
     private final static QName _OpdaterSynligtOrd_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "opdaterSynligtOrd");
     private final static QName _ErSpilletSlut_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "erSpilletSlut");
-    private final static QName _PrintSessionInfo_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "printSessionInfo");
     private final static QName _ErSpilletTabt_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "erSpilletTabt");
     private final static QName _GetBrugteBogstaver_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "getBrugteBogstaver");
-    private final static QName _HentOrdFraDrResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "hentOrdFraDrResponse");
     private final static QName _ErSidsteBogstavKorrektResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "erSidsteBogstavKorrektResponse");
     private final static QName _ErSpilletVundetResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "erSpilletVundetResponse");
     private final static QName _ErSpilletSlutResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "erSpilletSlutResponse");
     private final static QName _GetFornavnResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "getFornavnResponse");
-    private final static QName _LogStatusResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "logStatusResponse");
     private final static QName _HentBrugerResponse_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "hentBrugerResponse");
     private final static QName _HentBruger_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "hentBruger");
     private final static QName _GetOrdet_QNAME = new QName("http://galgeleg.surge.sh/wsdl", "getOrdet");
@@ -71,14 +64,6 @@ public class ObjectFactory {
      */
     public GetSynligtOrd createGetSynligtOrd() {
         return new GetSynligtOrd();
-    }
-
-    /**
-     * Create an instance of {@link LogStatus }
-     * 
-     */
-    public LogStatus createLogStatus() {
-        return new LogStatus();
     }
 
     /**
@@ -162,14 +147,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PrintSessionInfo }
-     * 
-     */
-    public PrintSessionInfo createPrintSessionInfo() {
-        return new PrintSessionInfo();
-    }
-
-    /**
      * Create an instance of {@link ErSpilletTabt }
      * 
      */
@@ -186,22 +163,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PrintSessionInfoResponse }
-     * 
-     */
-    public PrintSessionInfoResponse createPrintSessionInfoResponse() {
-        return new PrintSessionInfoResponse();
-    }
-
-    /**
-     * Create an instance of {@link HentOrdFraDr }
-     * 
-     */
-    public HentOrdFraDr createHentOrdFraDr() {
-        return new HentOrdFraDr();
-    }
-
-    /**
      * Create an instance of {@link GætBogstav }
      * 
      */
@@ -215,14 +176,6 @@ public class ObjectFactory {
      */
     public ErSpilletTabtResponse createErSpilletTabtResponse() {
         return new ErSpilletTabtResponse();
-    }
-
-    /**
-     * Create an instance of {@link Exception }
-     * 
-     */
-    public Exception createException() {
-        return new Exception();
     }
 
     /**
@@ -282,14 +235,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HentOrdFraDrResponse }
-     * 
-     */
-    public HentOrdFraDrResponse createHentOrdFraDrResponse() {
-        return new HentOrdFraDrResponse();
-    }
-
-    /**
      * Create an instance of {@link ErSidsteBogstavKorrektResponse }
      * 
      */
@@ -322,14 +267,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LogStatusResponse }
-     * 
-     */
-    public LogStatusResponse createLogStatusResponse() {
-        return new LogStatusResponse();
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetSynligtOrdResponse }{@code >}}
      * 
      */
@@ -354,15 +291,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "getSynligtOrd")
     public JAXBElement<GetSynligtOrd> createGetSynligtOrd(GetSynligtOrd value) {
         return new JAXBElement<GetSynligtOrd>(_GetSynligtOrd_QNAME, GetSynligtOrd.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LogStatus }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "logStatus")
-    public JAXBElement<LogStatus> createLogStatus(LogStatus value) {
-        return new JAXBElement<LogStatus>(_LogStatus_QNAME, LogStatus.class, null, value);
     }
 
     /**
@@ -438,24 +366,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PrintSessionInfoResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "printSessionInfoResponse")
-    public JAXBElement<PrintSessionInfoResponse> createPrintSessionInfoResponse(PrintSessionInfoResponse value) {
-        return new JAXBElement<PrintSessionInfoResponse>(_PrintSessionInfoResponse_QNAME, PrintSessionInfoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HentOrdFraDr }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "hentOrdFraDr")
-    public JAXBElement<HentOrdFraDr> createHentOrdFraDr(HentOrdFraDr value) {
-        return new JAXBElement<HentOrdFraDr>(_HentOrdFraDr_QNAME, HentOrdFraDr.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GætBogstav }{@code >}}
      * 
      */
@@ -471,15 +381,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "erSpilletTabtResponse")
     public JAXBElement<ErSpilletTabtResponse> createErSpilletTabtResponse(ErSpilletTabtResponse value) {
         return new JAXBElement<ErSpilletTabtResponse>(_ErSpilletTabtResponse_QNAME, ErSpilletTabtResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Exception }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "Exception")
-    public JAXBElement<Exception> createException(Exception value) {
-        return new JAXBElement<Exception>(_Exception_QNAME, Exception.class, null, value);
     }
 
     /**
@@ -501,15 +402,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PrintSessionInfo }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "printSessionInfo")
-    public JAXBElement<PrintSessionInfo> createPrintSessionInfo(PrintSessionInfo value) {
-        return new JAXBElement<PrintSessionInfo>(_PrintSessionInfo_QNAME, PrintSessionInfo.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ErSpilletTabt }{@code >}}
      * 
      */
@@ -525,15 +417,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "getBrugteBogstaver")
     public JAXBElement<GetBrugteBogstaver> createGetBrugteBogstaver(GetBrugteBogstaver value) {
         return new JAXBElement<GetBrugteBogstaver>(_GetBrugteBogstaver_QNAME, GetBrugteBogstaver.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link HentOrdFraDrResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "hentOrdFraDrResponse")
-    public JAXBElement<HentOrdFraDrResponse> createHentOrdFraDrResponse(HentOrdFraDrResponse value) {
-        return new JAXBElement<HentOrdFraDrResponse>(_HentOrdFraDrResponse_QNAME, HentOrdFraDrResponse.class, null, value);
     }
 
     /**
@@ -570,15 +453,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "getFornavnResponse")
     public JAXBElement<GetFornavnResponse> createGetFornavnResponse(GetFornavnResponse value) {
         return new JAXBElement<GetFornavnResponse>(_GetFornavnResponse_QNAME, GetFornavnResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LogStatusResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://galgeleg.surge.sh/wsdl", name = "logStatusResponse")
-    public JAXBElement<LogStatusResponse> createLogStatusResponse(LogStatusResponse value) {
-        return new JAXBElement<LogStatusResponse>(_LogStatusResponse_QNAME, LogStatusResponse.class, null, value);
     }
 
     /**
