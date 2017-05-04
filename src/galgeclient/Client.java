@@ -3,20 +3,45 @@ package galgeclient;
 import java.io.Console;
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
+import java.util.Map;
 import java.util.Scanner;
+import javax.xml.ws.BindingProvider;
+import javax.xml.ws.WebServiceRef;
+import sh.surge.galgeleg.wsdl.Galgelogik;
+import sh.surge.galgeleg.wsdl.GalgelogikService;
 
 public class Client {
+    @WebServiceRef
+    static GalgelogikService service;
+    static Galgelogik port;
     
     //main run
     public static void main(String[] args) throws MalformedURLException, RemoteException, Exception{
         Scanner scan = new Scanner(System.in);
-        GalgelegImp game = new GalgelegImp();
-        new Client().run(game,scan);
+        
+        try{
+            service = new GalgelogikService();
+            port = service.getPort(Galgelogik.class);
+            
+            System.out.println("Invoking printSessionInfo operation ...");
+            Map requestContext =
+                ((BindingProvider) port).getRequestContext();
+            requestContext.put(
+                BindingProvider.SESSION_MAINTAIN_PROPERTY, Boolean.TRUE);
+            System.out.println("SESSION_MAINTAIN is set all session ids are same");
+            System.out.println(port.printSessionInfo());
+            
+        }catch(Exception e){
+            System.out.println("Forbindelsen mislykkedes");
+            e.printStackTrace();
+        }
+
+        new Client().run(port,scan);
         scan.close();
     }
     
     //menuerne
-    void run(GalgelegI game, Scanner scan) throws RemoteException{
+    void run(Galgelogik game, Scanner scan) throws RemoteException{
         
         boolean loggedIn = false;
         int choice;
@@ -85,7 +110,7 @@ public class Client {
         }
     }
     
-    void spil(GalgelegI game, Scanner scan) {
+    void spil(Galgelogik game, Scanner scan) {
         
         String gaet;
         final int liv = 7;
