@@ -3,11 +3,7 @@ package galgeclient;
 import galgelegport.wsdl.GalgeServiceService;
 import galgelegport.wsdl.Galgelogik;
 import java.io.Console;
-import java.net.MalformedURLException;
-import java.rmi.RemoteException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.ws.WebServiceRef;
 
 public class Client {
@@ -18,7 +14,7 @@ public class Client {
     String password;
     
     //main run
-    public static void main(String[] args) throws MalformedURLException, RemoteException, Exception{
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         try{
             service = new GalgeServiceService();
@@ -32,7 +28,7 @@ public class Client {
     }
     
     //menuerne
-    void run(Galgelogik game, Scanner scan) throws RemoteException{
+    void run(Galgelogik game, Scanner scan){
         
         boolean loggedIn = false;
         int choice;
