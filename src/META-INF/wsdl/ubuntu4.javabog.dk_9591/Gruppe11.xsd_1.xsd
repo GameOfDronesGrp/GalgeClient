@@ -60,6 +60,10 @@
 
 <xs:element name="opdaterSynligtOrdResponse" type="tns:opdaterSynligtOrdResponse"></xs:element>
 
+<xs:element name="sayHello" type="tns:sayHello"></xs:element>
+
+<xs:element name="sayHelloResponse" type="tns:sayHelloResponse"></xs:element>
+
 <xs:element name="toString" type="tns:toString"></xs:element>
 
 <xs:element name="toStringResponse" type="tns:toStringResponse"></xs:element>
@@ -160,6 +164,16 @@
 </xs:complexType>
 
 <xs:complexType name="getSynligtOrdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sayHello">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sayHelloResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
 </xs:sequence>
