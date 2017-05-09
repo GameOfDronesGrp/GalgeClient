@@ -137,14 +137,14 @@ public class Client {
                 }
                 if(game.erSpilletTabt(brugernavn, password)){
                     System.out.println("Du har tabt, Ordet var: " + game.getOrdet(brugernavn, password));
-                    try {Thread.sleep(4000);
+                    try {Thread.sleep(2000);
                     } catch (InterruptedException ex) {}
-                    System.out.println("Point der bliver gemt: "+game.getScore(brugernavn, password));
+                    
                 }else if(game.erSpilletVundet(brugernavn, password)){
                     System.out.println("Du har vundet! Ordet var: "+game.getOrdet(brugernavn, password));
-                    try {Thread.sleep(4000);
+                    try {Thread.sleep(2000);
                     } catch (InterruptedException ex) {}
-                    System.out.println("Point der bliver gemt: "+game.getScore(brugernavn, password));
+                    
                 }
             }
         }
