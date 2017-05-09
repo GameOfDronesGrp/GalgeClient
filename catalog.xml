@@ -10,10 +10,10 @@
     <system systemId="http://localhost:8080/GalgeWebservice/GalgelogikService?xsd=1" uri="xml-resources/web-service-references/GalgelogikService/wsdl/localhost_8080/GalgeWebservice/GalgelogikService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/GalgeWebservice/AlleGalgespilService?wsdl" uri="xml-resources/web-service-references/AlleGalgespilService/wsdl/localhost_8080/GalgeWebservice/AlleGalgespilService.wsdl"/>
     <system systemId="http://localhost:8080/GalgeWebservice/AlleGalgespilService?xsd=1" uri="xml-resources/web-service-references/AlleGalgespilService/wsdl/localhost_8080/GalgeWebservice/AlleGalgespilService.xsd_1.xsd"/>
-    <system systemId="http://localhost:9591/Gruppe11/GalgeService?wsdl" uri="xml-resources/web-service-references/GalgeService/wsdl/localhost_9591/Gruppe11/GalgeService.wsdl"/>
-    <system systemId="http://localhost:9591/Gruppe11?xsd=1" uri="xml-resources/web-service-references/GalgeService/wsdl/localhost_9591/Gruppe11.xsd_1.xsd"/>
     <system systemId="http://80.197.119.219:9591/Gruppe11/GalgeService?wsdl" uri="xml-resources/web-service-references/GalgeService/wsdl/80.197.119.219_9591/Gruppe11/GalgeService.wsdl"/>
     <system systemId="http://80.197.119.219:9591/Gruppe11?xsd=1" uri="xml-resources/web-service-references/GalgeService/wsdl/80.197.119.219_9591/Gruppe11.xsd_1.xsd"/>
+    <system systemId="http://localhost:9591/Gruppe11/GalgeService?wsdl" uri="xml-resources/web-service-references/GalgeService/wsdl/localhost_9591/Gruppe11/GalgeService.wsdl"/>
+    <system systemId="http://localhost:9591/Gruppe11?xsd=1" uri="xml-resources/web-service-references/GalgeService/wsdl/localhost_9591/Gruppe11.xsd_1.xsd"/>
     <system systemId="http://ubuntu4.javabog.dk:9591/Gruppe11/GalgeService?wsdl" uri="xml-resources/web-service-references/GalgeService/wsdl/ubuntu4.javabog.dk_9591/Gruppe11/GalgeService.wsdl"/>
     <system systemId="http://ubuntu4.javabog.dk:9591/Gruppe11?xsd=1" uri="xml-resources/web-service-references/GalgeService/wsdl/ubuntu4.javabog.dk_9591/Gruppe11.xsd_1.xsd"/>
 </catalog>

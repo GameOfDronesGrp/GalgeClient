@@ -2,7 +2,9 @@ package galgeclient;
 
 import galgelegport.wsdl.GalgeServiceService;
 import galgelegport.wsdl.Galgelogik;
+import galgelegport.wsdl.ScoreDTO;
 import java.io.Console;
+import java.util.List;
 import java.util.Scanner;
 import javax.xml.ws.WebServiceRef;
 
@@ -12,6 +14,7 @@ public class Client {
     static Galgelogik port;
     String brugernavn;
     String password;
+    boolean loggedIn = false;
     
     //main run
     public static void main(String[] args) {
@@ -29,8 +32,6 @@ public class Client {
     
     //menuerne
     void run(Galgelogik game, Scanner scan){
-        
-        boolean loggedIn = false;
         int choice;
         while(true){
             if(!loggedIn){
@@ -73,6 +74,7 @@ public class Client {
             }else{
                 System.out.println("1. Nyt spil");
                 System.out.println("2. Log ud");
+                System.out.println("3. Se Rank liste");
                 
                 try{
                     choice = (int) Integer.parseInt(scan.nextLine());
@@ -90,6 +92,10 @@ public class Client {
                         System.out.println("Du er nu logget ud");
                         loggedIn = false;
                         break;
+                    }case 3:{
+                        showRanklist(game);
+                        run(game, scan);
+                        break;
                     }
                     default: System.out.println("Skriv 1 eller 2");
                 }
@@ -98,7 +104,7 @@ public class Client {
     }
     
     void spil(Galgelogik game, Scanner scan) {
-        
+
         String gaet;
         final int liv = 7;
         game.nulstil(brugernavn, password);
@@ -143,4 +149,23 @@ public class Client {
             }
         }
     }
+    
+    public void showRanklist(Galgelogik game){
+        try{
+            List<ScoreDTO> list = game.getRankList();
+            System.out.println("Rank\tUser_id\t\tScore\tTime");
+            for(int i=0; i < list.size() ; i++){
+                
+                System.out.printf("%d\t%s   \t%d \t%s \n", i+1,
+                        list.get(i).getUserID(),
+                        list.get(i).getScore(),
+                        list.get(i).getDatetime());
+            }
+        }catch(Exception e){
+            System.out.println("Kunne ikke vise ranklist");
+            e.printStackTrace();
+        }
+        System.out.println("\n");
+    }
+    
 }
