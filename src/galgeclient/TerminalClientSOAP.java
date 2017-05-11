@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 import javax.xml.ws.WebServiceRef;
 
-public class Client {
+public class TerminalClientSOAP {
     @WebServiceRef
     static GalgeServiceService service;
     static Galgelogik port;
@@ -18,20 +18,23 @@ public class Client {
     
     //main run
     public static void main(String[] args) {
+        
+        System.out.println("Forbindelse til SOAP-service oprettes...");
         Scanner scan = new Scanner(System.in);
         try{
             service = new GalgeServiceService();
             port = service.getPort(Galgelogik.class);
+            System.out.println("Forbindelse er oprettet\n\n");
         }catch(Exception e){
             System.out.println("Forbindelsen mislykkedes");
             e.printStackTrace();
         }
-        new Client().run(port,scan);
+        new TerminalClientSOAP().kør(port,scan);
         scan.close();
     }
     
     //menuerne
-    void run(Galgelogik game, Scanner scan){
+    void kør(Galgelogik game, Scanner scan){
         int choice;
         while(true){
             if(!loggedIn){
@@ -73,8 +76,9 @@ public class Client {
                 
             }else{
                 System.out.println("1. Nyt spil");
-                System.out.println("2. Log ud");
-                System.out.println("3. Se Rank liste");
+                System.out.println("2. Se Rank liste");
+                System.out.println("3. Log ud");
+
                 
                 try{
                     choice = (int) Integer.parseInt(scan.nextLine());
@@ -89,15 +93,15 @@ public class Client {
                         spil(game, scan);
                     }  break;
                     case 2: {
+                        showRanklist(game);
+                        kør(game, scan);
+                        break;
+                    }case 3:{
                         System.out.println("Du er nu logget ud");
                         loggedIn = false;
                         break;
-                    }case 3:{
-                        showRanklist(game);
-                        run(game, scan);
-                        break;
                     }
-                    default: System.out.println("Skriv 1 eller 2");
+                    default: System.out.println("1, 2 eller 3");
                 }
             }
         }
@@ -109,7 +113,8 @@ public class Client {
         final int liv = 7;
         game.nulstil(brugernavn, password);
         System.out.println("\n\n- Spillet er startet -");
-        
+        System.out.println("Point:"+game.getScore(brugernavn, password));
+
         while(!game.erSpilletSlut(brugernavn,password)){
             scan.reset();
             System.out.println("Dit ord "+ game.getSynligtOrd(brugernavn,password));
@@ -137,17 +142,14 @@ public class Client {
                 }
                 if(game.erSpilletTabt(brugernavn, password)){
                     System.out.println("Du har tabt, Ordet var: " + game.getOrdet(brugernavn, password));
-                    try {Thread.sleep(2000);
-                    } catch (InterruptedException ex) {}
-                    
                 }else if(game.erSpilletVundet(brugernavn, password)){
                     System.out.println("Du har vundet! Ordet var: "+game.getOrdet(brugernavn, password));
-                    try {Thread.sleep(2000);
-                    } catch (InterruptedException ex) {}
-                    
                 }
             }
         }
+        System.out.println("Point:"+game.getScore(brugernavn, password));
+        try {Thread.sleep(2000);
+        } catch (InterruptedException ex) {}
     }
     
     public void showRanklist(Galgelogik game){
